@@ -48,6 +48,11 @@ export default function TextForm(props) {
       props.showalert("Please enter text","warning");
     }
   }
+  const handleRead=()=>{
+    let msg =new SpeechSynthesisUtterance();
+    msg.text=text;
+    window.speechSynthesis.speak(msg);
+  }
 
 
 
@@ -108,6 +113,7 @@ export default function TextForm(props) {
       <button className="btn btn-primary mx-2" onClick={handleASCIIClick}>Convert to ASCII</button>
       <button className="btn btn-primary mx-2"onClick={handleClerText}>Clear Text</button>
       <button className="btn btn-primary mx-2" onClick={handleExtraspce}>Removextraspace</button>
+      <button className="btn btn-primary mx-2" onClick={handleRead}>Read text</button>
       </div>
    
     <div className="container my-3" style={{color: props.mode==="dark"?"white":"black"}} >

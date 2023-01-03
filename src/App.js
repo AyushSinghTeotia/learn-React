@@ -14,6 +14,9 @@ function App() {
     msg:massage,
     type:type
   })
+  setTimeout(() => {
+    setAlert(null);
+  }, 1500);
  }
 
  const togggleMode=()=>{
@@ -33,8 +36,7 @@ function App() {
  }
 
   return (
-    <>
-    
+    <>  
     <Navbar title="TextUtils2" mode={mode} toggleMode={togggleMode} modename={modename} AboutText="About Us"/>
     <Alert alert={alert}/>
     <div className="container my-3">
